@@ -10,7 +10,9 @@ export default class Perfil extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Image  source = {require('.././assets/example.png')}/>
+                <Image  
+                    source = {require('.././assets/example.jpg')} 
+                    style={styles.foto}/>
                 <Text style={styles.title}>
                     Pedro Reis
                 </Text>
@@ -32,5 +34,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
+    },
+    foto:{
+        width: 250,
+        height: 250,    
+        borderRadius: 10
     }
 })
