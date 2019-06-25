@@ -35,6 +35,18 @@ export default class Menu extends Component {
                         Equipamentos
                     </Text>
                 </View>
+                <View style={styles.card}>
+                    <Icon
+                        name='database'
+                        type='font-awesome'
+                        color='#379392'
+                        size= {100}
+                        onPress={() => this.props.navigation.navigate('showData')}
+                    />
+                    <Text style={styles.title}>
+                        Dados
+                    </Text>
+                </View>
             </View>
         );
     }
