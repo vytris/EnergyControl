@@ -6,6 +6,7 @@ import Perfil from './screens/perfil';
 import Equipamentos from './screens/equipamentos';
 import Menu from './screens/menu'
 import showData from './screens/showData';
+import addData from './screens/addData';
 
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
@@ -14,6 +15,7 @@ const MainNavigator = createStackNavigator({
   Profile: {screen: Perfil},
   Tools: {screen: Equipamentos},
   showData: {screen: showData},
+  addData: {screen: addData},
 });
 
 const App = createAppContainer(MainNavigator);

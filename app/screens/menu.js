@@ -44,7 +44,19 @@ export default class Menu extends Component {
                         onPress={() => this.props.navigation.navigate('showData')}
                     />
                     <Text style={styles.title}>
-                        Dados
+                        Mostrar
+                    </Text>
+                </View>
+                <View style={styles.card}>
+                    <Icon
+                        name='database'
+                        type='font-awesome'
+                        color='#379392'
+                        size= {100}
+                        onPress={() => this.props.navigation.navigate('addData')}
+                    />
+                    <Text style={styles.title}>
+                        Adicionar
                     </Text>
                 </View>
             </View>
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-around',
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'column',
         backgroundColor: 'white',
     },
     title:{
