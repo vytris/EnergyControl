@@ -4,7 +4,7 @@ import ItemComponent from '../components/ItemComponent';
 
 import { db } from '../utils/firebase';
 
-let itemsRef = db.ref('/items');
+let itemsRef = db.ref('/leituras');
 
 export default class List extends Component {
   state = {
@@ -23,7 +23,7 @@ export default class List extends Component {
     return (
       <View style={styles.container}>
         {this.state.items.length > 0 ? (
-          <ItemComponent items={this.state.items} />
+            <ItemComponent items={this.state.items} />
         ) : (
           <Text>No items</Text>
         )}
@@ -37,5 +37,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#ebebeb'
-  }
+  },
 });

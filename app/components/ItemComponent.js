@@ -12,8 +12,10 @@ export default class ItemComponent extends Component {
       <View style={styles.itemsList}>
         {this.props.items.map((item, index) => {
           return (
-            <View key={index}>
-              <Text style={styles.itemtext}>{item.name}</Text>
+            <View key={index} style={styles.itemBox}>
+              <Text style={styles.title}>Leitura {index}</Text>
+              <Text style={styles.itemtext}>Potencia: {item.potencia}W</Text>
+              <Text style={styles.itemtext}>Corrente: {item.corrente}A</Text>
             </View>
           );
         })}
@@ -26,11 +28,27 @@ const styles = StyleSheet.create({
   itemsList: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   itemtext: {
+    fontSize: 20,
+    textAlign: 'justify',
+    marginLeft: 15,
+    padding: 5,
+    color: 'white'
+  },
+  itemBox: {
+    backgroundColor: 'lightblue',
+    marginBottom: 50,
+    borderRadius: 25,
+    width: 300,
+  },
+  title: {
+    textAlign: 'center',
     fontSize: 24,
+    color: 'white',
     fontWeight: 'bold',
-    textAlign: 'center'
   }
+
 });

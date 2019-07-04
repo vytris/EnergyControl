@@ -18,6 +18,7 @@ const MainNavigator = createStackNavigator({
   addData: {screen: addData},
 });
 
+console.ignoredYellowBox = ['Setting a timer'];
 const App = createAppContainer(MainNavigator);
 
 export default App;

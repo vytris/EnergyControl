@@ -10,32 +10,40 @@ import {
 
 import { db } from '../utils/firebase';
 
-let addItem = item => {
-  db.ref('/items').push({
-    name: item
+let addItem = (cValor, pValor) => {
+  db.ref('/leituras').push({
+    potencia: pValor,
+    corrente: cValor
   });
 };
 
 export default class AddItem extends Component {
   state = {
-    name: ''
+    pValor: '',
+    //cValor: ''
   };
 
-  handleChange = e => {
+  handlePChange = e => {
     this.setState({
-      name: e.nativeEvent.text
+      pValor: e.nativeEvent.text
+    });
+  };
+  handleCChange = e => {
+    this.setState({
+      cValor: e.nativeEvent.text
     });
   };
   handleSubmit = () => {
-    addItem(this.state.name);
+    addItem(this.state.cValor, this.state.pValor);
     Alert.alert('Item saved successfully');
   };
 
   render() {
     return (
       <View style={styles.main}>
-        <Text style={styles.title}>Add Item</Text>
-        <TextInput style={styles.itemInput} onChange={this.handleChange} />
+        <Text style={styles.title}>Add Read</Text>
+        <TextInput style={styles.itemInput} onChange={this.handlePChange} placeholder="Potência" />
+        <TextInput style={styles.itemInput} onChange={this.handleCChange} placeholder="Corrente" />
         <TouchableHighlight
           style={styles.button}
           underlayColor="white"
@@ -65,6 +73,7 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 4,
     marginRight: 5,
+    marginBottom: 5,
     fontSize: 23,
     borderWidth: 1,
     borderColor: 'white',
