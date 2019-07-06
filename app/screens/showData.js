@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Text, StyleSheet } from 'react-native';
 import ItemComponent from '../components/ItemComponent';
 
 import { db } from '../utils/firebase';
@@ -21,13 +21,13 @@ export default class List extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         {this.state.items.length > 0 ? (
             <ItemComponent items={this.state.items} />
         ) : (
           <Text>No items</Text>
         )}
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -35,7 +35,7 @@ export default class List extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    marginTop: 5,
     backgroundColor: '#ebebeb'
   },
 });

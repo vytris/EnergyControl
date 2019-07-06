@@ -13,9 +13,10 @@ export default class ItemComponent extends Component {
         {this.props.items.map((item, index) => {
           return (
             <View key={index} style={styles.itemBox}>
-              <Text style={styles.title}>Leitura {index}</Text>
-              <Text style={styles.itemtext}>Potencia: {item.potencia}W</Text>
+              <Text style={styles.title}>Periodo {index}</Text>
+              <Text style={styles.itemtext}>Potencia: {item.potencia}kW</Text>
               <Text style={styles.itemtext}>Corrente: {item.corrente}A</Text>
+              <Text style={styles.itemtext}>Custo: R${item.preco}</Text>
             </View>
           );
         })}

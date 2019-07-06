@@ -13,19 +13,21 @@ import { db } from '../utils/firebase';
 let addItem = (cValor, pValor) => {
   db.ref('/leituras').push({
     potencia: pValor,
-    corrente: cValor
+    corrente: cValor,
+    preco: Number((pValor*0.8).toFixed(1))
   });
 };
 
 export default class AddItem extends Component {
   state = {
     pValor: '',
-    //cValor: ''
+    cValor: '',
+    custo: '',
   };
 
   handlePChange = e => {
     this.setState({
-      pValor: e.nativeEvent.text
+      pValor: e.nativeEvent.text,
     });
   };
   handleCChange = e => {
