@@ -1,12 +1,12 @@
 import Firebase from 'firebase';
 
 let config = {
-    apiKey: "AIzaSyBTv86zHeFtWNWKfsFjTdtx94s_43Mc3Xs",
-    authDomain: "energycontrol-77b8b.firebaseapp.com",
-    databaseURL: "https://energycontrol-77b8b.firebaseio.com",
-    projectId: "energycontrol-77b8b",
+    apiKey: "AIzaSyAcyG0dT9b5ppJlqkR3ywnt7ZrBZrYXn4U",
+    authDomain: "energycontroltest.firebaseapp.com",
+    databaseURL: "https://energycontroltest.firebaseio.com",
+    projectId: "energycontroltest",
     storageBucket: "",
-    messagingSenderId: "193020136648",
+    messagingSenderId: "473816751775",
 };
 
 let app = Firebase.initializeApp(config);

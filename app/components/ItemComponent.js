@@ -11,12 +11,14 @@ export default class ItemComponent extends Component {
     return (
       <View style={styles.itemsList}>
         {this.props.items.map((item, index) => {
+          leitura = item.split(' '),
+          custo = Number((leitura[1]*0.8).toFixed(1))
           return (
             <View key={index} style={styles.itemBox}>
               <Text style={styles.title}>Periodo {index}</Text>
-              <Text style={styles.itemtext}>Potencia: {item.potencia}kW</Text>
-              <Text style={styles.itemtext}>Corrente: {item.corrente}A</Text>
-              <Text style={styles.itemtext}>Custo: R${item.preco}</Text>
+              <Text style={styles.itemtext}>Potencia: {leitura[1]}kW</Text>
+              <Text style={styles.itemtext}>Corrente: {leitura[0]}A</Text>
+              <Text style={styles.itemtext}>Custo: R${custo}</Text>
             </View>
           );
         })}

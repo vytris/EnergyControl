@@ -4,7 +4,7 @@ import ItemComponent from '../components/ItemComponent';
 
 import { db } from '../utils/firebase';
 
-let itemsRef = db.ref('/leituras');
+let itemsRef = db.ref('/cabo');
 
 export default class List extends Component {
   state = {

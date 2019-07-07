@@ -11,7 +11,7 @@ import {
 import { db } from '../utils/firebase';
 
 let addItem = (cValor, pValor) => {
-  db.ref('/leituras').push({
+  db.ref('/cabo').push({
     potencia: pValor,
     corrente: cValor,
     preco: Number((pValor*0.8).toFixed(1))
