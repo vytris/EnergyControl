@@ -52,7 +52,7 @@ void loop()
     Serial.print(potencia);
     Serial.println(" W");
 
-    String dado = String(Irms) + String(" A ") + String(potencia) + String(" W");
+    String dado = String(Irms) + String(" ") + String(potencia);
     Firebase.pushString("/cabo", dado);
    
     delay(500);
