@@ -8,12 +8,16 @@ int pinSCT = A0;   //Pino analógico conectado ao SCT-013
  
 int tensao = 127;
 int potencia;
+int acumuladorP = 0;
+double acumuladorC = 0;
+int n = 0;
+
 
 #define FIREBASE_AUTH "c1wqxAprBxTh6eWhs7jOxyAW8J3GXPktpukYwQxy"
 #define FIREBASE_HOST "energycontroltest.firebaseio.com" 
 
-#define WIFI_SSID "CINGUESTS"
-#define WIFI_PASSWORD "acessocin"
+#define WIFI_SSID "ALBERG_2G"
+#define WIFI_PASSWORD "100200300"
 
 
 
@@ -52,15 +56,26 @@ void loop()
     Serial.print(potencia);
     Serial.println(" W");
 
-    String dado = String(Irms) + String(" ") + String(potencia);
-    Firebase.pushString("/cabo", dado);
+    n = n+1;
+    if(n>=6){
+      acumuladorP = potencia + acumuladorP;
+      acumuladorC = Irms + acumuladorC;
+    }
+
+    if(n==65){
+      Serial.println(acumuladorP);
+      Serial.println(acumuladorC);
+      String dado = String(acumuladorC/60) + String(" ") + String(acumuladorP*60);
+      Serial.println(dado);
+      Firebase.pushString("/cabo", dado);
+      n = 5;
+      acumuladorP = 0;
+      acumuladorC = 0;
+    }
    
-    delay(500);
- 
-    Serial.print(".");
-    delay(500);
-    Serial.print(".");
     delay(500);
     Serial.println(".");
     delay(500);
+    
+
 }
